@@ -10,7 +10,7 @@ import star from '../../assets/star.png';
 import start_people from '../../assets/start_people.png';
 import { Autoplay } from 'swiper/modules';
 
-const brandLogos = [amazon, amazon_vector, casio, moonstar, randstad, star, start_people];
+const brandLogos = [amazon, amazon_vector, casio, moonstar, randstad, star, start_people,amazon, amazon_vector, casio, moonstar, randstad, star, start_people];
 
 const Brands = () => {
     return (

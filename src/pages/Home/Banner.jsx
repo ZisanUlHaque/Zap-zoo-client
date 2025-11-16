@@ -46,8 +46,6 @@ const Banner = () => {
             <button className="btn rounded-2xl">Be a Rider</button>
           </div>
         </div>
-
-
       </Carousel>
     </div>
   );

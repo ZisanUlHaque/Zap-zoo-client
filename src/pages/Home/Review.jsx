@@ -6,12 +6,12 @@ import ReviewCard from './ReviewCard';
 
 const Reviews = ({ reviewPromise }) => {
     const reviews = use(reviewPromise);
-    console.log(reviews);
+
     return (
         <div className='my-24'>
             <div className='text-center mb-24'>
                 <h3 className="text-3xl text-center font-bold my-8">Review</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non soluta, perspiciatis esse eius praesentium similique asperiores quasi veniam repellat architecto repellendus, deserunt accusantium, debitis ipsa. Expedita possimus facilis voluptas deserunt.</p>
+                <p>Discover what our customers say about their experience with us. We take pride in delivering quality service and building trust every day.We work hard to ensure a seamless experience for everyone. Read how our customers feel about the services we provide</p>
             </div>
 
             <Swiper

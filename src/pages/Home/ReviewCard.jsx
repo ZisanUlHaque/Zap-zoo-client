@@ -1,8 +1,9 @@
 import React from 'react';
+import { BiStar } from 'react-icons/bi';
 import { FaQuoteLeft } from 'react-icons/fa';
 
 const ReviewCard = ({ review }) => {
-    const { userName, review: testimonial, user_photoURL } = review;
+    const { ratings, userName, review: testimonial, user_photoURL } = review;
     return (
         <div className="max-w-sm bg-base-100 shadow-lg rounded-xl p-6 border border-gray-200">
             {/* Quote Icon */}
@@ -23,7 +24,7 @@ const ReviewCard = ({ review }) => {
                 </div>
                 <div>
                     <h3 className="font-semibold text-lg">{userName}</h3>
-                    <p className="text-sm text-gray-500">Senior Product Designer</p>
+                    <p className="text-sm text-gray-500 flex items-center gap-1"><BiStar className='text-yellow-400 text-xl'></BiStar> {ratings}</p>
                 </div>
             </div>
         </div>

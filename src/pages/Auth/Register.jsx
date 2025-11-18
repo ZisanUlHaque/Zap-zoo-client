@@ -1,9 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import useAuth from '../../../hooks/useAuth';
+
 import { Link, useLocation, useNavigate } from 'react-router';
-import SocialLogin from '../SocialLogin/SocialLogin';
+
 import axios from 'axios';
+import useAuth from '../../hooks/useAuth';
+import SocialLogin from './SocailLogin';
 
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();

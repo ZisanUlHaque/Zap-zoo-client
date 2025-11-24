@@ -8,44 +8,83 @@ import Register from "../pages/Auth/Register";
 import PrivateRoute from "./PrivateRoute";
 import Rider from "../pages/Rider/Rider";
 import SendParcel from "../pages/SendParcel/SendParcel";
+import DashBoardLayout from "../layouts/DashBoardLayout";
+import MyPercel from "../pages/Dashboard/MyPercel";
+import Payment from "../pages/Dashboard/Payment";
+import PaymentSuccess from "../pages/Dashboard/PaymentSuccess";
+import PaymentCancelled from "../pages/Dashboard/PaymentCancelled";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
-    children:[
+    children: [
       {
         index: true,
-        Component: Home
+        Component: Home,
       },
       {
-        path: '/rider',
-        element: <PrivateRoute><Rider></Rider> </PrivateRoute>
+        path: "/rider",
+        element: (
+          <PrivateRoute>
+            <Rider></Rider>{" "}
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/send-parcel',
-        element: <PrivateRoute><SendParcel></SendParcel></PrivateRoute>,
-        loader: () => fetch('/warehouses.json').then(res => res.json())
+        path: "/send-parcel",
+        element: (
+          <PrivateRoute>
+            <SendParcel></SendParcel>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("/warehouses.json").then((res) => res.json()),
       },
       {
-        path: 'coverage',
+        path: "coverage",
         Component: Coverage,
-        loader: () => fetch('/warehouses.json').then(res => res.json())
-      }
-    ]
+        loader: () => fetch("/warehouses.json").then((res) => res.json()),
+      },
+    ],
   },
   {
-    path:'/',
+    path: "/",
     Component: AuthLayout,
     children: [
       {
-        path: '/login',
-        Component: Login
+        path: "/login",
+        Component: Login,
       },
       {
-        path: '/register',
-        Component: Register
+        path: "/register",
+        Component: Register,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <DashBoardLayout></DashBoardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "my-parcels",
+        Component: MyPercel,
+      },
+      {
+        path: "payment/:parcelId",
+        Component: Payment,
+      },
+      {
+        path: "payment-success",
+        Component: PaymentSuccess,
+      },
+      {
+        path: "payment-cancelled",
+        Component: PaymentCancelled
       }
-    ]
-  }
+    ],
+  },
 ]);

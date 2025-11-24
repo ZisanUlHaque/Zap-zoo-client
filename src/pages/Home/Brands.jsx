@@ -30,7 +30,7 @@ const brandLogos = [
 const Brands = () => {
   return (
     <div>
-      <h2 className="text-secondary font-bold text-2xl text-center mt-10 mb-5">
+      <h2 className="text-secondary font-bold text-3xl text-center mt-10 mb-8">
         We've helped thousands of sales teams
       </h2>
       <Swiper

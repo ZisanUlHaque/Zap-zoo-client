@@ -14,25 +14,26 @@ const PaymentHistory = () => {
       return res.data;
     },
   });
+
   return (
     <div>
       <h2 className="text-5xl">Payment History: {payments.length}</h2>
+
       <div className="overflow-x-auto">
         <table className="table table-zebra">
-          {/* head */}
           <thead>
             <tr>
-              <th></th>
-              <th>Name</th>
+              <th>#</th>
+              <th>Email</th>
               <th>Amount</th>
               <th>Transaction Id</th>
             </tr>
           </thead>
           <tbody>
-            {payments.map((payment,index) => (
+            {payments.map((payment, index) => (
               <tr key={payment._id}>
-                <th>{index+1}</th>
-                <td>Cy Ganderton</td>
+                <th>{index + 1}</th>
+                <td>{payment.customerEmail}</td>
                 <td>${payment.amount}</td>
                 <td>{payment.transactionId}</td>
               </tr>

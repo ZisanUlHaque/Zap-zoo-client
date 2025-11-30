@@ -82,8 +82,10 @@ const MyParcels = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Cost</th>
+                            <th>Tracking Id</th>
                             <th>Payment</th>
                             <th>Delivery Status</th>
+
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -103,6 +105,7 @@ const MyParcels = () => {
                                     }
                                 </td>
                                 <td>{parcel.deliveryStatus}</td>
+                                <td>{parcel.trackingId}</td>
                                 <td>
                                     <button className='btn btn-square hover:bg-primary'>
                                         <FaMagnifyingGlass />

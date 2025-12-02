@@ -4,6 +4,7 @@ import { FaMotorcycle, FaRegCreditCard, FaTasks, FaUser } from "react-icons/fa";
 import { Link, NavLink, Outlet } from "react-router";
 import useRole from "../hooks/useRole";
 import { RiBikeFill } from "react-icons/ri";
+import { SiGoogletasks } from "react-icons/si";
 
 const DashboardLayout = () => {
   const { role } = useRole();
@@ -98,6 +99,7 @@ const DashboardLayout = () => {
 
             {role === "rider" && (
               <>
+
                 <li>
                   <NavLink
                     className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
@@ -107,6 +109,18 @@ const DashboardLayout = () => {
                     <FaTasks></FaTasks>
                     <span className="is-drawer-close:hidden">
                       Assigned Deliveries
+                    </span>
+                  </NavLink>
+                </li>
+                                <li>
+                  <NavLink
+                    className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                    data-tip="Completed Deliveries"
+                    to="/dashboard/completed-deliveries"
+                  >
+                    <SiGoogletasks></SiGoogletasks>
+                    <span className="is-drawer-close:hidden">
+                      Completed Deliveries
                     </span>
                   </NavLink>
                 </li>

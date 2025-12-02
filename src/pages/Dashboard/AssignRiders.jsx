@@ -100,8 +100,8 @@ const AssignRiders = () => {
                                 <tr>
                                     <th></th>
                                     <th>Name</th>
-                                    <th>Job</th>
-                                    <th>Favorite Color</th>
+                                    <th>Email</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
